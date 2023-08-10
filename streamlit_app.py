@@ -14,6 +14,8 @@ st.set_page_config(pagetitle)
 st.title(pagetitle)
 st.info('This app allows you to create a thumbnail image for a YouTube video.')
 
+img_path = 'renders'
+
 # Initialize session state
 if 'color1' not in st.session_state:
     st.session_state.color1 = '#06D0DE'
@@ -100,13 +102,13 @@ with col1:
     rgb_color2 = ImageColor.getcolor(color2, 'RGB')
     # Generate wallpaper
     main(rgb_color1, rgb_color2)
-    with Image.open('wallpaper.png') as img:
+    with Image.open(f'{img_path}/wallpaper.png') as img:
         st.image(img)
 
 # Add text to wallpaper
 with col2:
     st.subheader('Wallpaper with Text')
-    with Image.open('wallpaper.png') as img:
+    with Image.open(f'{img_path}/wallpaper.png') as img:
         title_font_1 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_1)
         title_font_2 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_2)
 
@@ -120,11 +122,11 @@ with col2:
         img_edit.text((85,550), title_text_2, (255, 255, 255), font=title_font_2)
         
         if streamlit_logo:
-            logo_img = Image.open('./streamlit-logo.png').convert('RGBA')
+            logo_img = Image.open(f'{img_path}/streamlit-logo.png').convert('RGBA')
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
             img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
             
-        img.save('thumbnail.png')
+        img.save(f'{img_path}/thumbnail.png')
         st.image(img)
 
 # Remove background from photo
@@ -133,16 +135,16 @@ if image_upload:
     image = Image.open(image_upload)
     fixed = remove(image)
     fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
-    fixed.save('photo.png')
+    fixed.save(f'{img_path}/photo.png')
 
     # Overlay photo on wallpaper
-    base_img = Image.open('thumbnail.png').convert('RGBA')
-    photo_img = Image.open('photo.png').convert('RGBA')
+    base_img = Image.open(f'{img_path}/'thumbnail.png').convert('RGBA')
+    photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
 
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
-    base_img.save('final.png')
+    base_img.save(f'{img_path}/final.png')
 
-    final_img = Image.open('final.png')
+    final_img = Image.open(f'{img_path}/final.png')
     st.image(final_img)
 
     # Download final thumbnail image
