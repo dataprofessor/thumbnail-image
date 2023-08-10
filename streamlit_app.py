@@ -127,17 +127,16 @@ with col2:
 # Remove background from photo
 if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
-    with Image.open(image_upload) as image:
-        fixed = remove(image)
-        fixed.save('./renders/photo.png')
-        st.image(fixed) #####
+    image = Image.open(image_upload)
+    fixed = remove(image)
+    fixed.save('renders/photo.png')
 
     # Overlay photo on wallpaper
-    with Image.open('./renders/thumbnail.png').convert('RGBA') as base_img:
-        photo_img = Image.open('./renders/photo.png').convert('RGBA')
-        base_img.paste(photo_img, (20,20), photo_img)
-        base_img.save('./renders/final.png')
-        st.image(base_img)
+    base_img = Image.open('renders/thumbnail.png').convert('RGBA')
+    photo_img = Image.open('renders/photo.png').convert('RGBA')
+    base_img.paste(photo_img, (20,20), photo_img)
+    base_img.save('renders/final.png')
+    st.image(base_img)
 
     # Download final thumbnail image
     downloadable_image = convert_image(base_img)
