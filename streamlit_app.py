@@ -116,6 +116,7 @@ with col2:
         if bounding_box_1:
             #img_edit.rectangle(((50, 340), (750, 520)), fill="black")
             img_edit.rectangle(((left_margin_number_1, top_margin_number_1), (box_width_1, box_height_1)), fill="black")
+            img_edit.rotate(45)
         if bounding_box_2:
             img_edit.rectangle(((left_margin_number_2, top_margin_number_2), (box_width_2, box_height_2)), fill="black")
         img_edit.text((85,340), title_text_1, (255, 255, 255), font=title_font_1)
