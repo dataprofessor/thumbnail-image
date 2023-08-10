@@ -8,4 +8,4 @@ This app allows the generation of thumbnail images for YouTube videos.
 
 ## Resources and Libraries used
 - Wallpaper generation was performed using the [wallpaper-generator](https://github.com/timozattol/wallpaper-generator) GitHub repo from [timozattol](https://github.com/timozattol/).
-- Python libraries used: `PIL`, `subprocess`, `math`, `os`, `random`, `sys` and `streamlit`.
+- Python libraries used: `PIL`, `subprocess`, `math`, `os`, `random`, `rembg`, `sys` and `streamlit`.
