@@ -5,7 +5,7 @@ This app allows you to create thumbnail images for YouTube videos.
 ## App screenshot
 
 <p align="center">
-   <img src="app-screenshot.png" width="65%">
+   <img src="app-screenshot.png" width="50%">
 </p>
 
 ## Demo App
