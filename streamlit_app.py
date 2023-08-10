@@ -98,13 +98,13 @@ with col1:
     rgb_color2 = ImageColor.getcolor(color2, 'RGB')
     # Generate wallpaper
     main(rgb_color1, rgb_color2)
-    with Image.open('renders/wallpaper.png') as img:
+    with Image.open('./renders/wallpaper.png') as img:
         st.image(img)
 
 # Add text to wallpaper
 with col2:
     st.subheader('Wallpaper with Text')
-    with Image.open('renders/wallpaper.png') as img:
+    with Image.open('./renders/wallpaper.png') as img:
         title_font_1 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_1)
         title_font_2 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_2)
 
@@ -118,10 +118,10 @@ with col2:
         img_edit.text((85,550), title_text_2, (255, 255, 255), font=title_font_2)
         
         if streamlit_logo:
-            logo_img = Image.open('streamlit-logo.png').convert('RGBA')
+            logo_img = Image.open('./streamlit-logo.png').convert('RGBA')
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
             img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
-        img.save('renders/thumbnail.png')
+        img.save('./renders/thumbnail.png')
         st.image(img)
 
 # Remove background from photo
@@ -129,13 +129,13 @@ if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     with Image.open(image_upload) as image:
         fixed = remove(image)
-        fixed.save('renders/photo.png')
+        fixed.save('./renders/photo.png')
 
     # Overlay photo on wallpaper
-    with Image.open('renders/thumbnail.png').convert('RGBA') as base_img:
-        photo_img = Image.open('renders/photo.png').convert('RGBA')
+    with Image.open('./renders/thumbnail.png').convert('RGBA') as base_img:
+        photo_img = Image.open('./renders/photo.png').convert('RGBA')
         base_img.paste(photo_img, (20,20), photo_img)
-        base_img.save('renders/final.png')
+        base_img.save('./renders/final.png')
         st.image(base_img)
 
     # Download final thumbnail image
