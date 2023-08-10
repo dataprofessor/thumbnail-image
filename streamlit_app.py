@@ -98,13 +98,13 @@ with col1:
     rgb_color2 = ImageColor.getcolor(color2, 'RGB')
     # Generate wallpaper
     main(rgb_color1, rgb_color2)
-    with Image.open('./renders/wallpaper.png') as img:
+    with Image.open('wallpaper.png') as img:
         st.image(img)
 
 # Add text to wallpaper
 with col2:
     st.subheader('Wallpaper with Text')
-    with Image.open('./renders/wallpaper.png') as img:
+    with Image.open('wallpaper.png') as img:
         title_font_1 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_1)
         title_font_2 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_2)
 
@@ -122,7 +122,7 @@ with col2:
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
             img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
             
-        img.save('./renders/thumbnail.png')
+        img.save('thumbnail.png')
         st.image(img)
 
 # Remove background from photo
@@ -130,19 +130,19 @@ if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
     fixed = remove(image)
-    fixed.save('./renders/photo.png')
+    fixed.save('photo.png')
 
     # Overlay photo on wallpaper
-    base_img = Image.open('./renders/thumbnail.png').convert('RGBA')
+    base_img = Image.open('thumbnail.png').convert('RGBA')
     st.image(base_img)
     
-    photo_img = Image.open('./renders/photo.png').convert('RGBA')
+    photo_img = Image.open('photo.png').convert('RGBA')
     st.image(photo_img)
     
     base_img.paste(photo_img, (20,20), photo_img)
-    base_img.save('./renders/final.png')
+    base_img.save('final.png')
 
-    final_img = Image.open('./renders/final.png')
+    final_img = Image.open('final.png')
     st.image(final_img)
 
     # Download final thumbnail image
