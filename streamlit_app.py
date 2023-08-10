@@ -138,7 +138,7 @@ if image_upload:
     base_img.paste(photo_img, (20,20), photo_img)
     base_img.save('./renders/final.png')
 
-    final_img = Image.open(base_img)
+    final_img = Image.open('./renders/final.png')
     st.image(final_img)
 
     # Download final thumbnail image
