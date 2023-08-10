@@ -129,12 +129,14 @@ if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
     fixed = remove(image)
-    st.image(fixed)
     fixed.save('./renders/photo.png')
 
     # Overlay photo on wallpaper
     base_img = Image.open('./renders/thumbnail.png').convert('RGBA')
     photo_img = Image.open('./renders/photo.png').convert('RGBA')
+
+    st.image(photo_img)
+    
     base_img.paste(photo_img, (20,20), photo_img)
     base_img.save('./renders/final.png')
     st.image(base_img)
