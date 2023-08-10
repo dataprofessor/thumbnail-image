@@ -36,10 +36,11 @@ def main(color_1, color_2):
     file_dir = file_path.rstrip("/main.py")
 
     # Create renders/ folder if necessary
-    render_folder = file_dir + "/renders"
+    # render_folder = file_dir + "/renders"
     makedirs(render_folder, exist_ok=True)
 
-    render_file = render_folder + "/wallpaper.png"
+    #render_file = render_folder + "/wallpaper.png"
+    render_file = "wallpaper.png"
 
     # Get resolution from program arguments, or use default resolution
     resolution = default_resolution
