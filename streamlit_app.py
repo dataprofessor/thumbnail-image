@@ -134,6 +134,8 @@ if image_upload:
     # Overlay photo on wallpaper
     base_img = Image.open('./renders/thumbnail.png').convert('RGBA')
     photo_img = Image.open('./renders/photo.png').convert('RGBA')
+
+    st.image(photo_img)
     
     base_img.paste(photo_img, (20,20), photo_img)
     base_img.save('./renders/final.png')
