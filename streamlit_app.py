@@ -142,5 +142,5 @@ if image_upload:
     st.image(final_img)
 
     # Download final thumbnail image
-    downloadable_image = convert_image(base_img)
+    downloadable_image = convert_image(final_img)
     st.download_button("Download thumbnail image", downloadable_image, "thumbnail_image.png", "image/png")
