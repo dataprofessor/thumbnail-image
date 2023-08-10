@@ -80,7 +80,6 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-        # Generate RGB color code from selected colors
 
     # Add Streamlit logo
     st.subheader('Streamlit logo')
@@ -94,8 +93,10 @@ with st.sidebar:
 col1, col2 = st.columns(2)
 with col1:
     st.subheader('Rendered Wallpaper')
+    # Generate RGB color code from selected colors
     rgb_color1 = ImageColor.getcolor(color1, 'RGB')
     rgb_color2 = ImageColor.getcolor(color2, 'RGB')
+    # Generate wallpaper
     main(rgb_color1, rgb_color2)
     with Image.open('renders/wallpaper.png') as img:
         st.image(img)
