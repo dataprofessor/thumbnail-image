@@ -80,6 +80,8 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+        image_vertical_placement = st.slider('Adjust vertical placement', 0, 1000, 0, step=10)
+        image_horizontal_placement = st.slider('Adjust horizontal placement', 0, 1800, 0, step=10)
 
     # Add Streamlit logo
     st.subheader('Streamlit logo')
@@ -135,11 +137,8 @@ if image_upload:
 
     # Overlay photo on wallpaper
     base_img = Image.open('thumbnail.png').convert('RGBA')
-    st.image(base_img)
-    
     photo_img = Image.open('photo.png').convert('RGBA')
-    st.image(photo_img)
-    
+
     base_img.paste(photo_img, (0, 0), photo_img)
     base_img.save('final.png')
 
