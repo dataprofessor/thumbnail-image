@@ -121,8 +121,8 @@ with col2:
             logo_img = Image.open('./streamlit-logo.png').convert('RGBA')
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
             img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
-        img.save('./renders/thumbnail.png')
-        st.image(img)
+        img_edit.save('./renders/thumbnail.png')
+        st.image(img_edit)
 
 # Remove background from photo
 if image_upload:
@@ -134,8 +134,6 @@ if image_upload:
     # Overlay photo on wallpaper
     base_img = Image.open('./renders/thumbnail.png').convert('RGBA')
     photo_img = Image.open('./renders/photo.png').convert('RGBA')
-
-    st.image(photo_img)
     
     base_img.paste(photo_img, (20,20), photo_img)
     base_img.save('./renders/final.png')
