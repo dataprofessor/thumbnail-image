@@ -18,7 +18,7 @@ import subprocess, sys
 from PIL import Image, ImageDraw
 from random import sample
 from polylattice import PolyLattice
-from colors import palettes
+#from colors import palettes
 
 
 def main(color_1, color_2):
