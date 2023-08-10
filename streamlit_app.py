@@ -130,7 +130,7 @@ if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
     fixed = remove(image)
-    fixed.thumbnail([sys.maxsize, 1024], Resampling.LANCZOS)
+    fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
     fixed.save('photo.png')
 
     # Overlay photo on wallpaper
