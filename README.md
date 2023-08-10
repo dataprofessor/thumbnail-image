@@ -2,6 +2,12 @@
 
 This app allows you to create thumbnail images for YouTube videos.
 
+## App screenshot
+
+<p align="center">
+   <img src="app-screenshot.png" width="65%">
+</p>
+
 ## Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://thumbnail-image.streamlit.app/)
