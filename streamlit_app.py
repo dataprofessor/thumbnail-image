@@ -139,7 +139,8 @@ if image_upload:
     photo_img = Image.open('photo.png').convert('RGBA')
     st.image(photo_img)
     
-    base_img.paste(photo_img, (20,20), photo_img)
+    #base_img.paste(photo_img, (20,20), photo_img)
+    base_img.paste(fixed, (20,20), fixed)
     base_img.save('final.png')
 
     final_img = Image.open('final.png')
