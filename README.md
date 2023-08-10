@@ -1,21 +1,11 @@
 # 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
 
-Description of the app ...
+This app allows the generation of thumbnail images for YouTube videos.
 
 ## Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://starter-kit.streamlitapp.com/)
 
-## Section Heading
-
-This is filler text, please replace this with text for this section.
-
-## Further Reading
-
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
+## Resources and Libraries used
+- Wallpaper generation was performed using the [wallpaper-generator](https://github.com/timozattol/wallpaper-generator) GitHub repo from [timozattol](https://github.com/timozattol/).
+- Python libraries used: `PIL`, `subprocess`, `math`, `os`, `random`, `sys` and `streamlit`.
