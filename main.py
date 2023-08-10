@@ -36,7 +36,8 @@ def main(color_1, color_2):
     file_dir = file_path.rstrip("/main.py")
 
     # Create renders/ folder if necessary
-    # render_folder = file_dir + "/renders"
+    #render_folder = file_dir + "/renders"
+    render_folder = file_dir
     makedirs(render_folder, exist_ok=True)
 
     #render_file = render_folder + "/wallpaper.png"
