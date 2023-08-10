@@ -122,7 +122,7 @@ with col2:
         img_edit.text((85,550), title_text_2, (255, 255, 255), font=title_font_2)
         
         if streamlit_logo:
-            logo_img = Image.open(f'{img_path}/streamlit-logo.png').convert('RGBA')
+            logo_img = Image.open('streamlit-logo.png').convert('RGBA')
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
             img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
             
