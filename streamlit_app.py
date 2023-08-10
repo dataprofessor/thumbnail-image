@@ -135,15 +135,13 @@ if image_upload:
     fixed.save('photo.png')
 
     # Overlay photo on wallpaper
-    #base_img = Image.open('thumbnail.png').convert('RGBA')
-    base_img = Image.open('thumbnail.png')
+    base_img = Image.open('thumbnail.png').convert('RGBA')
     st.image(base_img)
     
     photo_img = Image.open('photo.png').convert('RGBA')
     st.image(photo_img)
     
-    #base_img.paste(photo_img, (20,20), photo_img)
-    base_img.paste(fixed, (0,0), fixed)
+    base_img.paste(photo_img, (20,20), photo_img)
     base_img.save('final.png')
 
     final_img = Image.open('final.png')
