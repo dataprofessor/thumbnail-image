@@ -139,7 +139,7 @@ if image_upload:
     base_img = Image.open('thumbnail.png').convert('RGBA')
     photo_img = Image.open('photo.png').convert('RGBA')
 
-    base_img.paste(photo_img, (0, 0), photo_img)
+    base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
     base_img.save('final.png')
 
     final_img = Image.open('final.png')
