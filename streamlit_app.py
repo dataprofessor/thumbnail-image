@@ -138,7 +138,7 @@ if image_upload:
     fixed.save(f'{img_path}/photo.png')
 
     # Overlay photo on wallpaper
-    base_img = Image.open(f'{img_path}/'thumbnail.png').convert('RGBA')
+    base_img = Image.open(f'{img_path}/thumbnail.png').convert('RGBA')
     photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
 
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
