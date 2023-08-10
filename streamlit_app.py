@@ -80,8 +80,8 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-        image_vertical_placement = st.slider('Adjust vertical placement', 0, 1000, 0, step=10)
-        image_horizontal_placement = st.slider('Adjust horizontal placement', 0, 1800, 0, step=10)
+        image_vertical_placement = st.slider('Adjust vertical placement', 0, 1000, 0, step=25)
+        image_horizontal_placement = st.slider('Adjust horizontal placement', -1000, 1000, 0, step=25)
 
     # Add Streamlit logo
     st.subheader('Streamlit logo')
