@@ -128,14 +128,15 @@ with col2:
 if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
+    st.image(image)
     fixed = remove(image)
-    fixed.save('renders/photo.png')
+    fixed.save('./renders/photo.png')
 
     # Overlay photo on wallpaper
-    base_img = Image.open('renders/thumbnail.png').convert('RGBA')
-    photo_img = Image.open('renders/photo.png').convert('RGBA')
+    base_img = Image.open('./renders/thumbnail.png').convert('RGBA')
+    photo_img = Image.open('./renders/photo.png').convert('RGBA')
     base_img.paste(photo_img, (20,20), photo_img)
-    base_img.save('renders/final.png')
+    base_img.save('./renders/final.png')
     st.image(base_img)
 
     # Download final thumbnail image
