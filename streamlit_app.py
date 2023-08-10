@@ -130,6 +130,7 @@ if image_upload:
     with Image.open(image_upload) as image:
         fixed = remove(image)
         fixed.save('./renders/photo.png')
+        st.image(fixed) #####
 
     # Overlay photo on wallpaper
     with Image.open('./renders/thumbnail.png').convert('RGBA') as base_img:
