@@ -82,16 +82,16 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-        image_vertical_placement = st.slider('Adjust vertical placement', 0, 1000, 0, step=25)
-        image_horizontal_placement = st.slider('Adjust horizontal placement', -1000, 1000, 0, step=25)
+        image_vertical_placement = st.slider('Vertical placement', 0, 1000, 0, step=25)
+        image_horizontal_placement = st.slider('Horizontal placement', -1000, 1000, 0, step=25)
 
     # Add Streamlit logo
     st.subheader('Streamlit logo')
     with st.expander('Expand'):
         streamlit_logo = st.checkbox('Add Streamlit logo', value=True, key='streamlit_logo')
-        logo_width = st.slider('Adjust image width', 0, 500, 180, step=10)
-        logo_vertical_placement = st.slider('Adjust vertical placement', 0, 1000, 900, step=10)
-        logo_horizontal_placement = st.slider('Adjust horizontal placement', 0, 1800, 20, step=10)
+        logo_width = st.slider('Image width', 0, 500, 180, step=10)
+        logo_vertical_placement = st.slider('Vertical placement', 0, 1000, 900, step=10)
+        logo_horizontal_placement = st.slider('Horizontal placement', 0, 1800, 20, step=10)
 
 # Render wallpaper
 col1, col2 = st.columns(2)
