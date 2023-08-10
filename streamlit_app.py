@@ -120,9 +120,11 @@ with col2:
         if streamlit_logo:
             logo_img = Image.open('./streamlit-logo.png').convert('RGBA')
             logo_img.thumbnail([sys.maxsize, logo_width], Resampling.LANCZOS)
-            img.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
+            img_edit.paste(logo_img, (logo_horizontal_placement, logo_vertical_placement), logo_img)
         img_edit.save('./renders/thumbnail.png')
-        st.image(img_edit)
+
+        edited_image = Image.open('./renders/thumbnail.png')
+        st.image(edited_image)
 
 # Remove background from photo
 if image_upload:
