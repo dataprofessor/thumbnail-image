@@ -129,7 +129,9 @@ with col2:
 if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
-    fixed = remove(image)
+    image.save('tmp_image.png')
+    tmp_image = Image.open('tmp_image.png')
+    fixed = remove(tmp_image)
     fixed.save('photo.png')
 
     # Overlay photo on wallpaper
