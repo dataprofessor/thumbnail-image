@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Sno-Blue-Arrow" viewBox="0 0 404 444" width="404" height="444">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #27aae1;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path id="Arrow" class="cls-1" d="M400.587,244.106a75.374,75.374,0,0,0,3.39-24.4,78,78,0,0,0-2.712-17.733A74.5,74.5,0,0,0,366.452,157L112.315,10.025a74.918,74.918,0,0,0-74.85,129.8l142,82.274-142,81.994a74.935,74.935,0,0,0,74.85,129.841L366.452,286.881a74.507,74.507,0,0,0,34.135-42.775"/>
+    </clipPath>
+  </defs>
+  <path id="Arrow-2" data-name="Arrow" class="cls-1" d="M400.587,244.106a75.374,75.374,0,0,0,3.39-24.4,78,78,0,0,0-2.712-17.733A74.5,74.5,0,0,0,366.452,157L112.315,10.025a74.918,74.918,0,0,0-74.85,129.8l142,82.274-142,81.994a74.935,74.935,0,0,0,74.85,129.841L366.452,286.881a74.507,74.507,0,0,0,34.135-42.775"/>
+</svg>
