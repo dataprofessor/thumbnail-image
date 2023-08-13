@@ -138,7 +138,7 @@ if image_upload:
 
     new_height = 1080
     width, height = fixed.size
-    new_width  = new_height * width / height
+    new_width  = new_height * int(width) / int(height)
     fixed.resize((new_width, new_height), Image.LANCZOS)
     
     #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
