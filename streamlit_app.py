@@ -134,14 +134,15 @@ with col2:
 if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
+    image = image.resize((width * image_resize, height * image_resize), Image.Resampling.LANCZOS)
     fixed = remove(image)
 
     #new_height = 1080
     width, height = fixed.size
+    st.write(width, height)
+    
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
-
-    fixed = fixed.thumbnail([sys.maxsize, (image_resize * width)], Resampling.LANCZOS)
     
     fixed.save(f'{img_path}/photo.png')
 
