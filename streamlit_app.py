@@ -140,8 +140,7 @@ if image_upload:
     #width, height = fixed.size
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
-    fixed.resize((1080, 1080), Image.LANCZOS)
-    st.image(fixed)
+    
     #fixed.thumbnail([sys.maxsize, 100%], Resampling.LANCZOS)
     #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
     fixed.save(f'{img_path}/photo.png')
@@ -150,6 +149,9 @@ if image_upload:
     base_img = Image.open(f'{img_path}/thumbnail.png').convert('RGBA')
     photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
 
+    photo_img.resize((1080, 1080), Image.LANCZOS)
+    st.image(photo_img)
+    
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
     base_img.save(f'{img_path}/final.png')
 
