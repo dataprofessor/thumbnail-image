@@ -136,12 +136,13 @@ if image_upload:
     image = Image.open(image_upload)
     fixed = remove(image)
 
-    new_height = 1080
-    width, height = fixed.size
-    new_width  = int(new_height * width / height)
-    fixed.resize((new_width, new_height), Image.LANCZOS)
-    st.image(fixed)
-    
+    #new_height = 1080
+    #width, height = fixed.size
+    #new_width  = int(new_height * width / height)
+    #fixed.resize((new_width, new_height), Image.LANCZOS)
+    #st.image(fixed)
+    st.write(sys.maxsize)
+    fixed.thumbnail([sys.maxsize, 100%], Resampling.LANCZOS)
     #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
     fixed.save(f'{img_path}/photo.png')
 
