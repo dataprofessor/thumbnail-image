@@ -82,7 +82,7 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-        image_resize = st.slider('Vertical placement', 0, 500, 100, step=10)
+        image_resize = st.slider('Image size', 0, 5, 1, step=0.1)
         image_vertical_placement = st.slider('Vertical placement', 0, 1000, 0, step=25)
         image_horizontal_placement = st.slider('Horizontal placement', -1000, 1000, 0, step=25)
 
@@ -141,13 +141,15 @@ if image_upload:
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
     
-    fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
-    st.write(fixed.size)
     fixed.save(f'{img_path}/photo.png')
 
     # Overlay photo on wallpaper
     base_img = Image.open(f'{img_path}/thumbnail.png').convert('RGBA')
     photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
+
+    # Image resize
+    image_resize
+    photo_img.thumbnail([sys.maxsize, (image_resize * 1080], Resampling.LANCZOS)
     
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
     base_img.save(f'{img_path}/final.png')
