@@ -149,7 +149,7 @@ if image_upload:
     base_img = Image.open(f'{img_path}/thumbnail.png').convert('RGBA')
     photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
 
-    photo_img.resize((1080, 1080), Image.LANCZOS)
+    photo_img.resize((5000, 5000), Image.LANCZOS)
     st.image(photo_img)
     
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
