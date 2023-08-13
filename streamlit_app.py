@@ -149,7 +149,7 @@ if image_upload:
 
     # Image resize
     image_resize
-    photo_img.thumbnail([sys.maxsize, (image_resize * 1080], Resampling.LANCZOS)
+    photo_img.thumbnail([sys.maxsize, (image_resize * 1080)], Resampling.LANCZOS)
     
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
     base_img.save(f'{img_path}/final.png')
