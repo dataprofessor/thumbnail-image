@@ -141,16 +141,13 @@ if image_upload:
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
     
-    #fixed.thumbnail([sys.maxsize, 100%], Resampling.LANCZOS)
-    #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
+    fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
+    st.write(fixed.size)
     fixed.save(f'{img_path}/photo.png')
 
     # Overlay photo on wallpaper
     base_img = Image.open(f'{img_path}/thumbnail.png').convert('RGBA')
     photo_img = Image.open(f'{img_path}/photo.png').convert('RGBA')
-
-    photo_img.resize((5000, 5000), Image.LANCZOS)
-    st.image(photo_img)
     
     base_img.paste(photo_img, (image_horizontal_placement, image_vertical_placement), photo_img)
     base_img.save(f'{img_path}/final.png')
