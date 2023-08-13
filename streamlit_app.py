@@ -137,10 +137,10 @@ if image_upload:
     image = image.resize((width * image_resize, height * image_resize), Image.Resampling.LANCZOS)
     fixed = remove(image)
 
-    #new_height = 1080
-    width, height = fixed.size
-    st.write(width, height)
+    st.write(fixed.size)
     
+    #new_height = 1080
+    # width, height = fixed.size
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
     
