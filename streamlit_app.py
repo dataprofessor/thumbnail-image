@@ -137,7 +137,7 @@ if image_upload:
     fixed = remove(image)
 
     new_height = 1080
-    width, height = im.size
+    width, height = fixed.size
     new_width  = new_height * width / height
     fixed.resize((new_width, new_height), Image.LANCZOS)
     
