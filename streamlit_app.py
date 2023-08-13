@@ -135,8 +135,8 @@ if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
 
-    new_width = int(image.width * (percentage / 100))
-    new_height = int(image.height * (percentage / 100))
+    new_width = int(image.width * image_resize)
+    new_height = int(image.height * image_resize)
     resized_image = image.resize((new_width, new_height))
     fixed = remove(resized_image)
     
