@@ -141,7 +141,7 @@ if image_upload:
     #new_width  = int(new_height * width / height)
     #fixed.resize((new_width, new_height), Image.LANCZOS)
 
-    fixed.thumbnail([sys.maxsize, (image_resize * width)], Resampling.LANCZOS)
+    fixed = fixed.thumbnail([sys.maxsize, (image_resize * width)], Resampling.LANCZOS)
     
     fixed.save(f'{img_path}/photo.png')
 
