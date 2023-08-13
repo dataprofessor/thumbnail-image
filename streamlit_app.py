@@ -142,7 +142,7 @@ if image_upload:
     #fixed.resize((new_width, new_height), Image.LANCZOS)
     #st.image(fixed)
     st.write(sys.maxsize)
-    fixed.thumbnail([sys.maxsize, 100%], Resampling.LANCZOS)
+    #fixed.thumbnail([sys.maxsize, 100%], Resampling.LANCZOS)
     #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
     fixed.save(f'{img_path}/photo.png')
 
