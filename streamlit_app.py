@@ -138,11 +138,10 @@ if image_upload:
 
     new_height = 1080
     width, height = fixed.size
-    st.write(width, height)
-    #new_width  = new_height * width / height
-    #fixed.resize((new_width, new_height), Image.LANCZOS)
+    new_width  = int(new_height * width / height)
+    fixed.resize((new_width, new_height), Image.LANCZOS)
     
-    fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
+    #fixed.thumbnail([sys.maxsize, 1080], Resampling.LANCZOS)
     fixed.save(f'{img_path}/photo.png')
 
     # Overlay photo on wallpaper
