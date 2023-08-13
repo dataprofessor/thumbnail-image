@@ -82,7 +82,7 @@ with st.sidebar:
     st.subheader('Image upload')
     with st.expander('Expand'):
         image_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-        image_resize = st.slider('Image size', 0, 5, 1, step=0.1)
+        image_resize = st.slider('Image size', 0.0, 5.0, 1.0, step=0.1)
         image_vertical_placement = st.slider('Vertical placement', 0, 1000, 0, step=25)
         image_horizontal_placement = st.slider('Horizontal placement', -1000, 1000, 0, step=25)
 
