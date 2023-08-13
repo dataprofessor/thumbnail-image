@@ -134,10 +134,9 @@ with col2:
 if image_upload:
     st.subheader('Photo overlayed on Wallpaper')
     image = Image.open(image_upload)
+    width, height = fixed.size
     image = image.resize((width * image_resize, height * image_resize), Image.Resampling.LANCZOS)
     fixed = remove(image)
-
-    st.write(fixed.size)
     
     #new_height = 1080
     # width, height = fixed.size
