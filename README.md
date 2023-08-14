@@ -14,6 +14,8 @@ This app allows you to create thumbnail images for YouTube videos.
 
 ## How the app works?
 
+Herein are the general workflow of the app.
+
 **Input:**
 - User selects 2 colors they like (or randomly select complementary colors, blue + orange, green + red)
 - Enter title text to display on thumbnail image
