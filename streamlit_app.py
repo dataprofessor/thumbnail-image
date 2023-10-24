@@ -66,7 +66,7 @@ with st.sidebar:
         bounding_box_1 = st.checkbox('Black bounding box for text', value=True, key='bounding_box_1')
         left_margin_number_1 = st.number_input('Left margin', 0, 800, 50, step=10, key='left_margin_number_1')
         top_margin_number_1 = st.number_input('Top margin', 0, 800, 340, step=10, key='top_margin_number_1')
-        box_width_1 = st.number_input('Box width', 0, 800, 750, step=10, key='box_width_1')
+        box_width_1 = st.number_input('Box width', 0, 1200, 750, step=10, key='box_width_1')
         box_height_1 = st.number_input('Box height', 0, 800, 520, step=10, key='box_height_1')
 
         st.markdown('### Line 2 Text')
