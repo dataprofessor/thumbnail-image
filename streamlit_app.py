@@ -129,6 +129,7 @@ with col2:
             
         img.save(f'{img_path}/thumbnail.png')
         st.image(img)
+        st.download_button("Download thumbnail image", img, "thumbnail.png", "image/png")
 
 # Remove background from photo
 if image_upload:
