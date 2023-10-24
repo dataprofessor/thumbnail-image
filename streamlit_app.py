@@ -129,7 +129,8 @@ with col2:
             
         img.save(f'{img_path}/thumbnail.png')
         st.image(img)
-        st.download_button("Download thumbnail image", img, "thumbnail.png", "image/png")
+        downloadable_thumbnail = convert_image(img)
+        st.download_button("Download image", downloadable_thumbnail, "thumbnail.png", "image/png")
 
 # Remove background from photo
 if image_upload:
@@ -156,4 +157,4 @@ if image_upload:
 
     # Download final thumbnail image
     downloadable_image = convert_image(final_img)
-    st.download_button("Download thumbnail image", downloadable_image, "thumbnail_image.png", "image/png")
+    st.download_button("Download final image", downloadable_image, "thumbnail_image.png", "image/png")
