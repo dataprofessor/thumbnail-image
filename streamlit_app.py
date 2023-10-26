@@ -61,7 +61,7 @@ with st.sidebar:
     st.subheader('Title Text')
     with st.expander('Expand'):
         st.markdown('### Line 1 Text')
-        title_text_1 = st.text_input('Enter text', 'GITHUB')
+        title_text_1 = st.text_input('Enter text', 'DATA')
         title_font_1 = st.slider('Font size', 10, 200, 150, step=10)
         bounding_box_1 = st.checkbox('Black bounding box for text', value=True, key='bounding_box_1')
         left_margin_number_1 = st.number_input('Left margin', 0, 800, 50, step=10, key='left_margin_number_1')
@@ -70,7 +70,7 @@ with st.sidebar:
         box_height_1 = st.number_input('Box height', 0, 800, 520, step=10, key='box_height_1')
 
         st.markdown('### Line 2 Text')
-        title_text_2 = st.text_input('Enter text', 'CODESPACES')
+        title_text_2 = st.text_input('Enter text', 'PROFESSOR')
         title_font_2 = st.slider('Font size', 10, 200, 120, step=10)
         bounding_box_2 = st.checkbox('Black bounding box for text', value=True, key='bounding_box_2')
         left_margin_number_2 = st.number_input('Left margin', 0, 800, 50, step=10, key='left_margin_number_2')
