@@ -97,7 +97,7 @@ with st.sidebar:
 # Render wallpaper
 col1, col2 = st.columns(2)
 # with col1:
-with st.expander('See Rendered Wallpaper'):
+with st.expander('See Rendered Wallpaper', expanded=True):
     st.subheader('Rendered Wallpaper')
     # Generate RGB color code from selected colors
     rgb_color1 = ImageColor.getcolor(color1, 'RGB')
@@ -109,7 +109,7 @@ with st.expander('See Rendered Wallpaper'):
 
 # Add text to wallpaper
 # with col2:
-with st.expander('See Wallpaper with Text'):
+with st.expander('See Wallpaper with Text', expanded=True):
     st.subheader('Wallpaper with Text')
     with Image.open(f'{img_path}/wallpaper.png') as img:
         title_font_1 = ImageFont.truetype('font/Montserrat-BlackItalic.ttf', title_font_1)
