@@ -10,7 +10,7 @@ from io import BytesIO
 
 # Page title
 pagetitle = '🏞️ Thumbnail Image Generator'
-st.set_page_config(pagetitle)
+st.set_page_config(pagetitle, layout='wide')
 st.title(pagetitle)
 st.info('This app allows you to create a thumbnail image for a YouTube video.')
 
