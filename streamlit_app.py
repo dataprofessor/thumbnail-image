@@ -46,6 +46,7 @@ def convert_image(img):
     byte_im = buf.getvalue()
     return byte_im
 
+
 # Sidebar input widgets
 with st.sidebar:
     st.header('⚙️ Settings')
@@ -95,20 +96,8 @@ with st.sidebar:
         logo_horizontal_placement = st.slider('Horizontal placement', 0, 1800, 20, step=10)
 
 # Render wallpaper
-col1, col2 = st.columns(2)
-# with col1:
-with st.expander('See Rendered Wallpaper', expanded=True):
-    st.subheader('Rendered Wallpaper')
-    # Generate RGB color code from selected colors
-    rgb_color1 = ImageColor.getcolor(color1, 'RGB')
-    rgb_color2 = ImageColor.getcolor(color2, 'RGB')
-    # Generate wallpaper
-    main(rgb_color1, rgb_color2)
-    with Image.open(f'{img_path}/wallpaper.png') as img:
-        st.image(img)
 
 # Add text to wallpaper
-# with col2:
 with st.expander('See Wallpaper with Text', expanded=True):
     st.subheader('Wallpaper with Text')
     with Image.open(f'{img_path}/wallpaper.png') as img:
@@ -133,6 +122,16 @@ with st.expander('See Wallpaper with Text', expanded=True):
         st.image(img)
         downloadable_thumbnail = convert_image(img)
         st.download_button("Download image", downloadable_thumbnail, "thumbnail.png", "image/png")
+
+with st.expander('See Rendered Wallpaper', expanded=False):
+    st.subheader('Rendered Wallpaper')
+    # Generate RGB color code from selected colors
+    rgb_color1 = ImageColor.getcolor(color1, 'RGB')
+    rgb_color2 = ImageColor.getcolor(color2, 'RGB')
+    # Generate wallpaper
+    main(rgb_color1, rgb_color2)
+    with Image.open(f'{img_path}/wallpaper.png') as img:
+        st.image(img)
 
 # Remove background from photo
 if image_upload:
