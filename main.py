@@ -31,7 +31,7 @@ def main(color_1, color_2):
 
     # Polygons have a fixed size in px. Higher resolution = more polygons
     # poly_sizes = (240, 200)
-    poly_sizes = (480, 400)
+    poly_sizes = (360, 300)
 
     ## Paths ##
     file_path = path.realpath(__file__)
