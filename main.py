@@ -26,7 +26,7 @@ def main(color_1, color_2):
     ## Configurations ##
     #palette = 'pastel_forest'
     mutation_intensity = 30
-    default_resollution = [1920, 1080]
+    default_resolution = [1920, 1080]
 
     # Polygons have a fixed size in px. Higher resolution = more polygons
     poly_sizes = (240, 200)
